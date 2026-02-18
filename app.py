@@ -17,7 +17,6 @@ if not os.path.exists("risk_model.pkl"):
         "assignments": [90, 80, 35, 25, 70, 45, 92, 10],
         "risk": [0, 0, 1, 1, 0, 1, 0, 1]
     }
-
     df = pd.DataFrame(data)
     X = df[["attendance", "marks", "assignments"]]
     y = df["risk"]

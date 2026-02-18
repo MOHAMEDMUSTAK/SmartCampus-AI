@@ -7,7 +7,7 @@ Intelligent Student Risk Prediction System using Machine Learning
 
 SmartCampus AI is a Machine Learning–powered academic monitoring system built using Python and Flask.
 
-The application predicts students who are at risk of academic failure by analyzing key academic indicators such as:
+The application predicts Students who are at risk of academic failure by analyzing key academic indicators such as:
 
 - Attendance Percentage  
 - Internal Assessment Marks  

@@ -5,10 +5,8 @@ import os
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-
 app = Flask(__name__)
 app.secret_key = "smartcampus_secret"
-
 # ===============================
 # 1️⃣ TRAIN MODEL IF NOT EXISTS
 # ===============================
@@ -44,14 +42,12 @@ CREATE TABLE IF NOT EXISTS users (
     password TEXT
 )
 """)
-
 c.execute("SELECT * FROM users WHERE username='admin'")
 if not c.fetchone():
     c.execute("INSERT INTO users (username, password) VALUES (?, ?)", ("admin", "1234"))
 
 conn.commit()
 conn.close()
-
 # ===============================
 # 3️⃣ LOGIN PAGE
 # ===============================
@@ -66,7 +62,6 @@ def login():
         c.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password))
         user = c.fetchone()
         conn.close()
-
         if user:
             session["user"] = username
             return redirect("/dashboard")
